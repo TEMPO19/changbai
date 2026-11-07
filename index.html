@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#080B10">
+<title>长白山 | 摄影作品集</title>
+<meta name="description" content="长白山旅行摄影作品集。天池、恩都里、秋沙鸭公园、美人松、秋沙鸭河儿边，五个地点的雪山夜景主题影像。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="长白山 | 摄影作品集">
+<meta property="og:description" content="天池、恩都里、秋沙鸭公园、美人松、秋沙鸭河儿边 —— 五个地点的雪山夜景影像。">
+<meta property="og:image" content="assets/img/tianchi-16.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+
+<!-- ============ 加载遮罩 ============ -->
+<div class="loader" id="loader">
+  <div class="loader__inner">
+    <span class="loader__mark">长白山</span>
+    <div class="loader__bar"><i></i></div>
+  </div>
+</div>
+
+<!-- ============ 顶部导航 ============ -->
+<header class="nav" id="nav">
+  <a class="nav__brand" href="#top">
+    <span class="nav__brand-cn">长白山</span>
+    <span class="nav__brand-en">Changbai&nbsp;Mountain</span>
+  </a>
+  <nav class="nav__menu" aria-label="项目导航">
+    <a href="#tianchi">天池</a>
+    <a href="#enduli">恩都里</a>
+    <a href="#qiushaya">秋沙鸭公园</a>
+    <a href="#meirensong">美人松</a>
+    <a href="#hebian">秋沙鸭河儿边</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="打开菜单" aria-expanded="false">
+    <i></i><i></i>
+  </button>
+</header>
+
+<!-- 移动端抽屉 -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__bg" data-close></div>
+  <nav class="drawer__panel">
+    <span class="drawer__label">Projects</span>
+    <a href="#tianchi" data-close>天池<span>Tianchi</span></a>
+    <a href="#enduli" data-close>恩都里<span>Enduli</span></a>
+    <a href="#qiushaya" data-close>秋沙鸭公园<span>Qiushaya</span></a>
+    <a href="#meirensong" data-close>美人松<span>Meirensong</span></a>
+    <a href="#hebian" data-close>秋沙鸭河儿边<span>Riverside</span></a>
+  </nav>
+</div>
+
+<!-- 滚动进度条 -->
+<div class="progress" id="progress"><i></i></div>
+
+<main id="top">
+
+  <!-- ============ 封面 ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__bg" id="heroBg"></div>
+    <div class="hero__ink" aria-hidden="true">
+      <img src="assets/ink.png" alt="">
+    </div>
+    <div class="hero__grain"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow" data-hero="1">
+        <span class="dot"></span>Personal Photography Archive
+      </p>
+      <h1 class="hero__title">
+        <span class="hero__title-cn" data-hero="2">长白山</span>
+      </h1>
+      <p class="hero__sub" data-hero="3">
+        <span class="hero__sub-en">Changbai&nbsp;Mountain</span>
+        <span class="hero__sub-cn">吉林 · 安图 · 池北区</span>
+      </p>
+      <div class="hero__meta" data-hero="4">
+        <div class="hero__meta-item"><b>2026</b><span>Year</span></div>
+        <div class="hero__meta-item"><b>10</b><span>Month</span></div>
+        <div class="hero__meta-item"><b>25</b><span>Day</span></div>
+      </div>
+      <p class="hero__arrived" data-hero="4">
+        <span class="hero__arrived-cn">抵达长白山</span>
+        <span class="hero__arrived-en">Arrived at Changbai Mountain</span>
+      </p>
+    </div>
+    <div class="hero__scroll" data-hero="5">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"><i></i></div>
+    </div>
+  </section>
+
+  <!-- ============ 项目导航（目录） ============ -->
+  <section class="index" id="index">
+    <ul class="index__list" id="indexList"></ul>
+  </section>
+
+  <!-- ============ 项目分区（由 JS 渲染） ============ -->
+  <div id="projects"></div>
+
+  <!-- ============ 关于 ============ -->
+  <section class="about" id="about">
+    <div class="about__grid">
+      <div class="about__left reveal">
+        <span class="about__label">About</span>
+        <h2 class="about__title">长白山</h2>
+        <p class="about__en">Changbai Mountain — Personal Photography Portfolio</p>
+      </div>
+    </div>
+    <footer class="foot">
+      <span>© 2026 长白山摄影作品集</span>
+      <span class="foot__mid">长白山 · 雪山夜景</span>
+      <a href="#top" class="foot__top">回到顶部 ↑</a>
+    </footer>
+  </section>
+
+</main>
+
+<!-- ============ 灯箱 ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="图片查看器">
+  <div class="lightbox__backdrop" data-lb="close"></div>
+
+  <button class="lightbox__btn lightbox__btn--close" data-lb="close" aria-label="关闭">
+    <svg viewBox="0 0 24 24"><path d="M5 5l14 14M19 5L5 19"/></svg>
+  </button>
+  <button class="lightbox__btn lightbox__btn--prev" data-lb="prev" aria-label="上一张">
+    <svg viewBox="0 0 24 24"><path d="M15 4L7 12l8 8"/></svg>
+  </button>
+  <button class="lightbox__btn lightbox__btn--next" data-lb="next" aria-label="下一张">
+    <svg viewBox="0 0 24 24"><path d="M9 4l8 8-8 8"/></svg>
+  </button>
+
+  <figure class="lightbox__figure">
+    <img id="lbImg" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+    <figcaption class="lightbox__caption">
+      <span class="lightbox__cap-title" id="lbTitle"></span>
+      <span class="lightbox__cap-meta" id="lbMeta"></span>
+    </figcaption>
+  </figure>
+
+  <div class="lightbox__counter"><span id="lbIndex">01</span><i>/</i><span id="lbTotal">10</span></div>
+  <div class="lightbox__thumbs" id="lbThumbs"></div>
+</div>
+
+<script src="assets/data.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
